@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Sales Agent — Open-Source Next.js 15 + Ollama</title>
-  <meta name="description" content="Open-source AI Sales Agent with Next.js 15, Ollama chatbot, content generator, lead finder, and admin dashboard.">
-  <meta property="og:title" content="AI Sales Agent — Open-Source">
-  <meta property="og:description" content="AI chatbot, content generator, lead finder, admin dashboard. Built with Next.js 15 + Ollama.">
+  <title>AI SaaS Starter Kit — Next.js 15 + Stripe + OpenAI | $399</title>
+  <meta name="description" content="Production-ready SaaS boilerplate with Next.js 15, Stripe subscriptions, OpenAI streaming, JWT auth, SQLite, Docker. Launch your AI SaaS in days.">
+  <meta property="og:title" content="AI SaaS Starter Kit — Launch Your SaaS in Days">
+  <meta property="og:description" content="Next.js 15 boilerplate with Stripe, OpenAI, JWT auth, admin dashboard, Docker. $399 one-time.">
   <meta property="og:image" content="screenshots/landing.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
@@ -83,11 +83,16 @@
         <img src="https://img.shields.io/badge/license-MIT-green?style=flat" alt="MIT">
         <img src="https://img.shields.io/github/stars/Dvbxtreme/ai-sales-agent?style=flat" alt="Stars">
       </div>
-      <h1>AI Sales Agent</h1>
-      <p>Open-source sales automation powered by Next.js 15 and local AI. Chatbot, content generator, lead finder — all running for free on your machine.</p>
+      <h1>AI SaaS Starter Kit</h1>
+      <p>Production-ready SaaS boilerplate with Next.js 15, Stripe subscriptions, OpenAI streaming, JWT auth, admin dashboard, and Docker deployment. Launch in days, not weeks.</p>
+      <div style="margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <span style="background:#dc2626;color:#fff;padding:4px 12px;border-radius:4px;font-size:.85rem;font-weight:600">🔥 PROMOCJA -50%</span>
+        <span style="color:#71717a;font-size:1.5rem;text-decoration:line-through">$997</span>
+        <span style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#f59e0b,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent">$399</span>
+      </div>
       <div class="hero-buttons">
-        <a href="https://github.com/Dvbxtreme/ai-sales-agent" class="btn btn-primary">View on GitHub</a>
-        <a href="https://cyruliks.gumroad.com/l/ghhvqh" class="btn btn-gold">Get SaaS Starter Kit — $997</a>
+        <a href="https://cyruliks.gumroad.com/l/ghhvqh" class="btn btn-gold">Buy Now — $399</a>
+        <a href="https://github.com/Dvbxtreme/ai-sales-agent" class="btn btn-secondary">Free Open-Source Version</a>
       </div>
     </div>
   </div>
@@ -173,20 +178,62 @@
 
   <div class="cta">
     <div class="container">
-      <h2>Need the Full Production Kit?</h2>
-      <p>The AI Sales Agent is open-source and free. For a complete SaaS starter with Stripe subscriptions, OpenAI streaming, JWT auth, and Docker deployment — get the full kit.</p>
-      <div class="price">$997</div>
-      <div class="price-label">one-time · commercial license · unlimited projects</div>
+      <h2>Stop Rebuilding Auth & Payments</h2>
+      <p>Get the complete AI SaaS Starter Kit with Stripe subscriptions, OpenAI streaming, JWT auth, admin dashboard, SQLite, and Docker deployment. Commercial license — unlimited projects.</p>
+      <div style="margin-bottom:16px">
+        <span style="color:#71717a;font-size:2rem;text-decoration:line-through">$997</span>
+        <span style="font-size:3rem;font-weight:800;background:linear-gradient(135deg,#f59e0b,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:16px">$399</span>
+      </div>
+      <div class="price-label">🔥 PROMO -50% · one-time · commercial license · unlimited projects</div>
       <br><br>
-      <a href="https://cyruliks.gumroad.com/l/ghhvqh" class="btn btn-gold">Buy SaaS Starter Kit</a>
+      <a href="https://cyruliks.gumroad.com/l/ghhvqh" class="btn btn-gold" style="font-size:1.2rem;padding:18px 48px">Buy Now — $399</a>
       <br><br>
-      <a href="https://github.com/Dvbxtreme/ai-sales-agent" class="btn btn-secondary">Download Free AI Sales Agent</a>
+      <p style="color:#52525b">Try the <a href="https://github.com/Dvbxtreme/ai-sales-agent" style="color:#a78bfa">open-source AI Sales Agent</a> for free first</p>
+    </div>
+  </div>
+
+  <div class="features" style="padding-top:0">
+    <div class="container">
+      <h2>What's Inside</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">🔐</div>
+          <h3>JWT Auth</h3>
+          <p>Login/signup with httpOnly cookies, bcrypt password hashing, protected routes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💳</div>
+          <h3>Stripe Subscriptions</h3>
+          <p>Monthly/yearly billing with Checkout. Webhooks for subscription status changes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🤖</div>
+          <h3>OpenAI Integration</h3>
+          <p>Streaming chat with credit limits. Swap any OpenAI-compatible API.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📊</div>
+          <h3>Admin Dashboard</h3>
+          <p>User management, usage analytics, content moderation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🗄️</div>
+          <h3>SQLite Database</h3>
+          <p>Zero config. Swap to PostgreSQL when you scale.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🐳</div>
+          <h3>Docker Deploy</h3>
+          <p>Containerized dev + production. One-click Vercel deploy.</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <footer>
     <div class="container">
-      <p>Built with <a href="https://nextjs.org">Next.js 15</a> + <a href="https://ollama.com">Ollama</a>. Open-source under MIT license.</p>
+      <p><a href="https://cyruliks.gumroad.com/l/ghhvqh">AI SaaS Starter Kit</a> — $399 one-time · Built with Next.js 15 + Stripe + OpenAI</p>
+      <p style="margin-top:8px;font-size:.85rem">Also check the <a href="https://github.com/Dvbxtreme/ai-sales-agent">open-source AI Sales Agent</a> (free)</p>
     </div>
   </footer>
 </body>

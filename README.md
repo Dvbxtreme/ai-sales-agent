@@ -51,4 +51,4 @@ npm start
 
 This AI Sales Agent pairs perfectly with the [AI SaaS Starter Kit](https://cyruliks.gumroad.com/l/ghhvqh) — a production-ready SaaS boilerplate with Stripe subscriptions, OpenAI streaming, JWT auth, admin dashboard, and Docker deployment.
 
-**$997 one-time. Commercial license. Unlimited projects.**
+**🔥 PROMO -50%: $399 one-time (regular $997). Commercial license. Unlimited projects.**
