@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Sales Agent — Open-Source Next.js 15 + Ollama</title>
+  <meta name="description" content="Open-source AI Sales Agent with Next.js 15, Ollama chatbot, content generator, lead finder, and admin dashboard.">
+  <meta property="og:title" content="AI Sales Agent — Open-Source">
+  <meta property="og:description" content="AI chatbot, content generator, lead finder, admin dashboard. Built with Next.js 15 + Ollama.">
+  <meta property="og:image" content="screenshots/landing.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0b; color: #e4e4e7; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Hero */
+    .hero { padding: 100px 0 60px; text-align: center; }
+    .hero h1 { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; color: #a1a1aa; max-width: 700px; margin: 0 auto 40px; }
+    .hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+    .hero-badges img { height: 28px; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 14px 32px; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all .2s; display: inline-block; }
+    .btn-primary { background: linear-gradient(135deg, #a78bfa, #60a5fa); color: #fff; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(96, 165, 250, .3); }
+    .btn-secondary { background: #27272a; color: #e4e4e7; border: 1px solid #3f3f46; }
+    .btn-secondary:hover { background: #3f3f46; }
+    .btn-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245, 158, 11, .3); }
+
+    /* Features */
+    .features { padding: 80px 0; }
+    .features h2 { text-align: center; font-size: 2rem; margin-bottom: 60px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .feature-card { background: #18181b; border: 1px solid #27272a; border-radius: 12px; padding: 30px; transition: border-color .2s; }
+    .feature-card:hover { border-color: #a78bfa; }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+    .feature-card p { color: #a1a1aa; font-size: .95rem; }
+
+    /* Screenshots */
+    .screenshots { padding: 80px 0; }
+    .screenshots h2 { text-align: center; font-size: 2rem; margin-bottom: 60px; }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 24px; }
+    .screenshot-item { background: #18181b; border: 1px solid #27272a; border-radius: 12px; overflow: hidden; }
+    .screenshot-item img { width: 100%; display: block; }
+    .screenshot-item .label { padding: 16px 20px; font-weight: 600; color: #a1a1aa; border-top: 1px solid #27272a; }
+
+    /* Tech stack */
+    .tech { padding: 80px 0; }
+    .tech h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    .tech-table { max-width: 600px; margin: 0 auto; border-collapse: collapse; }
+    .tech-table td { padding: 12px 20px; border-bottom: 1px solid #27272a; }
+    .tech-table td:first-child { font-weight: 600; color: #a78bfa; }
+    .tech-table td:last-child { color: #a1a1aa; }
+
+    /* CTA */
+    .cta { padding: 100px 0; text-align: center; }
+    .cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .cta p { color: #a1a1aa; font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .cta .price { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #f59e0b, #d97706); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .cta .price-label { color: #71717a; }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 0; border-top: 1px solid #27272a; color: #71717a; }
+    footer a { color: #a78bfa; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .screenshot-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <div class="hero-badges">
+        <img src="https://img.shields.io/badge/Next.js-15-black?style=flat&logo=next.js" alt="Next.js 15">
+        <img src="https://img.shields.io/badge/Ollama-local-8A2BE2?style=flat" alt="Ollama">
+        <img src="https://img.shields.io/badge/license-MIT-green?style=flat" alt="MIT">
+        <img src="https://img.shields.io/github/stars/Dvbxtreme/ai-sales-agent?style=flat" alt="Stars">
+      </div>
+      <h1>AI Sales Agent</h1>
+      <p>Open-source sales automation powered by Next.js 15 and local AI. Chatbot, content generator, lead finder — all running for free on your machine.</p>
+      <div class="hero-buttons">
+        <a href="https://github.com/Dvbxtreme/ai-sales-agent" class="btn btn-primary">View on GitHub</a>
+        <a href="https://cyruliks.gumroad.com/l/ghhvqh" class="btn btn-gold">Get SaaS Starter Kit — $997</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">💬</div>
+          <h3>AI Chatbot</h3>
+          <p>Conversational AI powered by Ollama (local LLM). No API keys, no ongoing costs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">✍️</div>
+          <h3>Content Generator</h3>
+          <p>Auto-generate blog posts, tweets, LinkedIn content, and outreach emails in seconds.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🎯</div>
+          <h3>Lead Finder</h3>
+          <p>Scrape potential customers from the web. Built-in lead management dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📧</div>
+          <h3>Auto Outreach</h3>
+          <p>Generate personalized cold emails for each lead. One-click copy and send.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📊</div>
+          <h3>Admin Dashboard</h3>
+          <p>Full admin panel to manage leads, content, settings, and track performance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📝</div>
+          <h3>Built-in Blog</h3>
+          <p>AI-powered blog with auto-generated content. SEO-optimized out of the box.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screenshots">
+    <div class="container">
+      <h2>Screenshots</h2>
+      <div class="screenshot-grid">
+        <div class="screenshot-item">
+          <img src="screenshots/landing.png" alt="Landing page" loading="lazy">
+          <div class="label">Landing Page</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="screenshots/chatbot.png" alt="AI Chatbot" loading="lazy">
+          <div class="label">AI Chatbot</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="screenshots/content_gen.png" alt="Content Generator" loading="lazy">
+          <div class="label">Content Generator</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="screenshots/leads.png" alt="Lead Finder" loading="lazy">
+          <div class="label">Lead Finder</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="screenshots/dashboard.png" alt="Admin Dashboard" loading="lazy">
+          <div class="label">Admin Dashboard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tech">
+    <div class="container">
+      <h2>Tech Stack</h2>
+      <table class="tech-table">
+        <tr><td>Framework</td><td>Next.js 15 (App Router)</td></tr>
+        <tr><td>AI</td><td>Ollama (local LLM, free)</td></tr>
+        <tr><td>Database</td><td>SQLite (via better-sqlite3)</td></tr>
+        <tr><td>Auth</td><td>JWT (httpOnly cookies)</td></tr>
+        <tr><td>Styling</td><td>Tailwind CSS</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="container">
+      <h2>Need the Full Production Kit?</h2>
+      <p>The AI Sales Agent is open-source and free. For a complete SaaS starter with Stripe subscriptions, OpenAI streaming, JWT auth, and Docker deployment — get the full kit.</p>
+      <div class="price">$997</div>
+      <div class="price-label">one-time · commercial license · unlimited projects</div>
+      <br><br>
+      <a href="https://cyruliks.gumroad.com/l/ghhvqh" class="btn btn-gold">Buy SaaS Starter Kit</a>
+      <br><br>
+      <a href="https://github.com/Dvbxtreme/ai-sales-agent" class="btn btn-secondary">Download Free AI Sales Agent</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Built with <a href="https://nextjs.org">Next.js 15</a> + <a href="https://ollama.com">Ollama</a>. Open-source under MIT license.</p>
+    </div>
+  </footer>
+</body>
+</html>
