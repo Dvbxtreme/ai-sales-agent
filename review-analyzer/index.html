@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Analyzer — Chrome Extension | $29</title>
+  <meta name="description" content="Chrome extension that analyzes Amazon, Allegro, Etsy reviews using local AI. Find top complaints and praises in one click.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0b; color: #e4e4e7; line-height: 1.6; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    .hero { padding: 80px 0 40px; text-align: center; }
+    .hero .logo { font-size: 4rem; margin-bottom: 16px; }
+    .hero h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+    .hero p { font-size: 1.1rem; color: #a1a1aa; max-width: 600px; margin: 0 auto 24px; }
+    .price-block { margin: 24px 0; }
+    .price-block .old { color: #71717a; font-size: 1.5rem; text-decoration: line-through; }
+    .price-block .current { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #f59e0b, #d97706); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-left: 12px; }
+    .btn { padding: 14px 40px; border-radius: 8px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: all .2s; display: inline-block; }
+    .btn-buy { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; }
+    .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.3); }
+    .btn-outline { background: #27272a; color: #e4e4e7; border: 1px solid #3f3f46; }
+    .btn-outline:hover { background: #3f3f46; }
+    .features { padding: 60px 0; }
+    .features h2 { text-align: center; font-size: 1.8rem; margin-bottom: 40px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
+    .feature-card { background: #18181b; border: 1px solid #27272a; border-radius: 12px; padding: 24px; }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .feature-card p { font-size: .85rem; color: #a1a1aa; }
+    .how { padding: 60px 0; background: #18181b; }
+    .how h2 { text-align: center; font-size: 1.8rem; margin-bottom: 40px; }
+    .step { max-width: 500px; margin: 0 auto 24px; display: flex; gap: 16px; }
+    .step .num { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#a78bfa,#60a5fa); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+    .step p { color: #a1a1aa; font-size: .95rem; padding-top: 6px; }
+    .step strong { color: #e4e4e7; }
+    .cta { padding: 60px 0; text-align: center; }
+    .cta h2 { font-size: 2rem; margin-bottom: 12px; }
+    .cta p { color: #a1a1aa; margin-bottom: 24px; }
+    .requirements { padding: 40px 0; }
+    .requirements h3 { text-align: center; color: #71717a; font-size: .9rem; margin-bottom: 16px; }
+    .requirements ul { max-width: 400px; margin: 0 auto; list-style: none; }
+    .requirements li { padding: 8px 0; color: #a1a1aa; font-size: .85rem; text-align: center; }
+    .requirements li::before { content: "✓ "; color: #22c55e; }
+    footer { text-align: center; padding: 32px 0; border-top: 1px solid #27272a; color: #52525b; font-size: .85rem; }
+    footer a { color: #a78bfa; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <div class="logo">🔍</div>
+      <h1>Review Analyzer</h1>
+      <p>One-click analysis of customer reviews. Find out what people hate and love about any product on Amazon, Allegro, and Etsy — powered by local AI (Ollama).</p>
+      <div class="price-block">
+        <span class="old">$49</span>
+        <span class="current">$29</span>
+        <span style="display:block;color:#71717a;font-size:.85rem;margin-top:4px">one-time · no subscriptions</span>
+      </div>
+      <a href="https://cyruliks.gumroad.com/l/review-analyzer" class="btn btn-buy">Buy Now — $29</a>
+      <br><br>
+      <a href="#how" class="btn btn-outline">How It Works</a>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="container">
+      <h2>Why You Need This</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon">🎯</div>
+          <h3>Beat Competitors</h3>
+          <p>Know exactly what customers complain about in competing products. Improve yours and win.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">⚡</div>
+          <h3>One Click</h3>
+          <p>No setup. No config. Go to any product page, click the extension, get insights instantly.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🔒</div>
+          <h3>100% Private</h3>
+          <p>All analysis runs locally on your machine via Ollama. No data leaves your computer.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🛒</div>
+          <h3>Multi-Platform</h3>
+          <p>Works on Amazon, Allegro, Etsy, Shopify. More platforms coming.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🤖</div>
+          <h3>AI-Powered</h3>
+          <p>Uses Mistral LLM via Ollama to find patterns across dozens of reviews instantly.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💾</div>
+          <h3>Free AI</h3>
+          <p>No API costs. Ollama runs for free on your machine. Unlimited analyses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="how" id="how">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="step">
+        <div class="num">1</div>
+        <p><strong>Install</strong> the extension and <strong>Ollama</strong> (free, 5 min setup)</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <p>Go to any <strong>Amazon, Allegro, or Etsy</strong> product page</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <p>Click the extension icon → <strong>"Analyze This Page"</strong></p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <p>Get <strong>top complaints & praises</strong> in seconds</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="requirements">
+    <div class="container">
+      <h3>REQUIREMENTS</h3>
+      <ul>
+        <li>Google Chrome browser</li>
+        <li>Ollama installed (free from ollama.com)</li>
+        <li>Mistral model pulled (ollama pull mistral)</li>
+        <li>Windows / Mac / Linux</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="container">
+      <h2>Get Review Analyzer</h2>
+      <p>$29 one-time. No subscriptions. No hidden costs.</p>
+      <a href="https://cyruliks.gumroad.com/l/review-analyzer" class="btn btn-buy" style="font-size:1.2rem;padding:16px 48px">Buy Now — $29</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Also check the <a href="https://cyruliks.gumroad.com/l/ghhvqh">AI SaaS Starter Kit</a> — $399</p>
+  </footer>
+</body>
+</html>
